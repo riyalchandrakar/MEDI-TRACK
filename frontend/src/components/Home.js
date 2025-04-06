@@ -21,7 +21,7 @@ const Card = ({ icon: Icon, title, description, primary }) => (
     <Icon className="w-8 h-8 text-blue-600 mb-4" />
     <h3 className="text-xl font-bold mb-2">{title}</h3>
     <p className="text-gray-600 mb-4">{description}</p>
-    <Button primary>Explore</Button>
+    {/* <Button primary onClick={() => handleButtonClick('/login')}>Explore</Button> */}
   </div>
 );
 
@@ -54,26 +54,38 @@ const Home = () => {
       </header>
       
       <main className="flex-1">
-        <Section bg="bg-blue-600" height="min-h-[30rem]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
+      <Section bg="bg-blue-600" height="min-h-[30rem]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
+            {/* Text content */}
             <div>
-              <h1 className="text-5xl font-bold text-white mb-6 text-left">
+              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                 Streamline Your Hospital Management
               </h1>
-              <p className="text-xl text-white mb-10 text-left">
+              <p className="text-lg md:text-xl text-white mb-8">
                 Our comprehensive hospital management system helps you optimize patient care, streamline operations,
                 and improve overall efficiency.
               </p>
-              <div className="flex gap-4 justify-left">
-                <Button primary onClick={() => handleButtonClick('/login')}>Explore Features</Button>
-                <Button onClick={() => handleButtonClick('/login')}>Appointments</Button>
+              <div className="flex flex-wrap gap-4">
+                <Button primary onClick={() => handleButtonClick('/login')}>
+                  Explore Features
+                </Button>
+                <Button variant="outline" onClick={() => handleButtonClick('/login')} className="border-white text-white hover:bg-white hover:text-blue-600">
+                  Appointments
+                </Button>
               </div>
             </div>
-            <div className="bg-gray-200 w-full h-full min-h-[20rem] rounded-lg overflow-hidden">
-              <img src="home-1.jpeg" alt="" />
+
+            {/* Image side */}
+            <div className="w-full h-full min-h-[20rem] rounded-xl overflow-hidden shadow-lg">
+              <img
+                src="home-1.jpeg"
+                alt="Hospital illustration"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </Section>
+
 
         <Section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -128,9 +140,9 @@ const Home = () => {
         </Section>
       </main>
 
-      <footer className="bg-white py-6 border-t">
+      <footer className="bg-black py-6 border-t">
         <div className="container mx-auto px-4 flex items-center justify-between">
-          <p className="text-gray-600">&copy; 2024 Medi-Track. All rights reserved.</p>
+          <p className="text-gray-100">&copy; 2024 Medi-Track. All rights reserved.</p>
         </div>
       </footer>
     </div>
