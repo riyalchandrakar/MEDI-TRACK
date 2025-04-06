@@ -9,6 +9,8 @@
 
 The Hospital Management System is a web application designed to streamline hospital operations, manage patient records, and enhance the overall efficiency of healthcare services. This application is built using React for the frontend and Node.js with Express for the backend, along with MongoDB for data storage.
 
+### 🌍 Deployed on Render (Live): [Visit Medi-Track](https://medi-track-wvrc.onrender.com)
+
 ## Features
 
 - User authentication for patients, doctors, and admins.
