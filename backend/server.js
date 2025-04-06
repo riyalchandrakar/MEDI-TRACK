@@ -41,11 +41,6 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/doctor', doctorRoutes);
 app.use('/api/patient', patientRoutes);
 
-// Root route
-app.get('/', (req, res) => {
-  res.send('Welcome to the Medi-Track API');
-});
-
 if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join(__dirname, "./frontend/build")));
 
