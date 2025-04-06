@@ -10,16 +10,20 @@ import loginRoutes from './routes/login.js';
 import adminRoutes from './routes/admin.js';
 import doctorRoutes from './routes/doctor.js';
 import patientRoutes from './routes/patient.js';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Required for __dirname equivalent in ES modules
-const __filename = fileURLToPath(import.meta.url);
+// const __filename = fileURLToPath(import.meta.url);
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 
 // Middleware
 app.use(cors()); 
@@ -41,11 +45,11 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/doctor', doctorRoutes);
 app.use('/api/patient', patientRoutes);
 
-if(process.env.NODE_ENV==="production"){
-  app.use(express.static(path.join(__dirname, "./frontend/build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../frontend/build")));
 
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "./frontend", "build", "index.html"))
+    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
   });
 }
 
