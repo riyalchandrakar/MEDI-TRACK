@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { BASE_URL } from '../constants/constants';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const SignUp = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await fetch('http://localhost:5000/api/signup', {
+        const response = await fetch(BASE_URL + '/signup', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -214,7 +215,9 @@ const SignUp = () => {
                     Log in
                   </button>
                 </p>
+                <div className='flex justify-center items-center'>
                 {errors.submit && <p className="text-red-500 text-xs mt-1">{errors.submit}</p>}
+                </div>
               </div>
             </div>
           </div>

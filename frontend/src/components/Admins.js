@@ -574,7 +574,6 @@ export default function AdminDashboard() {
           body: JSON.stringify(doctorData)
         });
         if (response.ok) {
-          alert('Doctor added successfully');
           setDoctorData({
             firstName: '',
             lastName: '',
@@ -584,6 +583,9 @@ export default function AdminDashboard() {
             phoneNumber: '',
             password: ''
           });
+          fetchDoctorOverview();
+          fetchTotalDoctors();
+          return toast.success('Doctor added successfully');
         } else if (response.status === 401) {
           navigate("/login");
           return toast.error('Your session has expired. Please log in again.');
