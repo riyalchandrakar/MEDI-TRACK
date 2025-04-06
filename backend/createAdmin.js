@@ -1,6 +1,8 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
-const Admin = require('./models/Admin');
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import Admin from './models/Admin.js';
+
+dotenv.config();
 
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,

@@ -1,16 +1,25 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors'); // Add this line
-const cookieParser = require('cookie-parser');
-const path = require('path');
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import cookieParser from 'cookie-parser';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import signupRoutes from './routes/signup.js';
+import loginRoutes from './routes/login.js';
+import adminRoutes from './routes/admin.js';
+import doctorRoutes from './routes/doctor.js';
+import patientRoutes from './routes/patient.js';
+
+// Required for __dirname equivalent in ES modules
+const __filename = fileURLToPath(import.meta.url);
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const __dirname = path.resolve();
+const __dirname = path.resolve(__filename);
 
 // Middleware
 app.use(cors()); 
@@ -26,11 +35,11 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((err) => console.error('Could not connect to MongoDB', err));
 
 // Routes
-app.use('/api/signup', require('./routes/signup'));
-app.use('/api/login', require('./routes/login'));
-app.use('/api/admin', require('./routes/admin'));
-app.use('/api/doctor', require('./routes/doctor'));
-app.use('/api/patient', require('./routes/patient'));
+app.use('/api/signup', signupRoutes);
+app.use('/api/login', loginRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/doctor', doctorRoutes);
+app.use('/api/patient', patientRoutes);
 
 // Root route
 app.get('/', (req, res) => {

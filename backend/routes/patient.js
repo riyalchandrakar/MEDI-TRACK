@@ -1,10 +1,13 @@
-const express = require('express');
-require('dotenv').config();
-const Patient = require('../models/User');
-const jwt = require('jsonwebtoken');
-const Appointment = require('../models/Appointment');
-const Doctor = require('../models/Doctor');
-const Prescription = require('../models/Prescription');
+import express from 'express';
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
+
+import Patient from '../models/User.js';
+import Appointment from '../models/Appointment.js';
+import Doctor from '../models/Doctor.js';
+import Prescription from '../models/Prescription.js';
+
+dotenv.config();
 
 const router = express.Router();
 
@@ -156,4 +159,4 @@ router.get('/appointment/completed-cancelled', auth, async (req, res) => {
 });
 
 
-module.exports = router;
+export default router;

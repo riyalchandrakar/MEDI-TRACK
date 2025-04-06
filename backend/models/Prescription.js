@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const prescriptionSchema = new mongoose.Schema({
   patientId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
@@ -11,4 +11,4 @@ const prescriptionSchema = new mongoose.Schema({
 
 const Prescription = mongoose.model('Prescription', prescriptionSchema);
 
-module.exports = Prescription;
+export default Prescription;

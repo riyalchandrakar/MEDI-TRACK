@@ -1,11 +1,14 @@
-const express = require('express');
-require('dotenv').config();
-const Doctor = require('../models/Doctor');
-const Admin = require('../models/Admin');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
-const Appointment = require('../models/Appointment');
+import express from 'express';
+import dotenv from 'dotenv';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+
+import Doctor from '../models/Doctor.js';
+import Admin from '../models/Admin.js';
+import User from '../models/User.js';
+import Appointment from '../models/Appointment.js';
+
+dotenv.config();
 
 const router = express.Router();
 
@@ -189,4 +192,4 @@ router.get('/appointments/upcoming', auth, async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
