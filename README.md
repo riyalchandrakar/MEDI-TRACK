@@ -11,11 +11,11 @@ The Hospital Management System is a web application designed to streamline hospi
 
 ## Features
 
-- User authentication for patients, doctors, and admins
-- Patient management including records and appointments
-- Doctor management with profiles and schedules
-- Admin dashboard for overseeing hospital operations
-- Responsive design for mobile and desktop users
+- User authentication for patients, doctors, and admins.
+- Patient management including records, appointments, prescriptions and history.
+- Doctor management with profiles, appointment history and schedules.
+- Admin dashboard for overseeing hospital operations.
+- Responsive design for mobile and desktop users.
 
 ## Technologies Used
 
@@ -24,6 +24,7 @@ The Hospital Management System is a web application designed to streamline hospi
   - React Router
   - Tailwind CSS
   - Lucide Icons
+  - React-Hot-Toast
   - Axios for API calls
 
 - **Backend:**
@@ -41,12 +42,19 @@ The Hospital Management System is a web application designed to streamline hospi
 - Node.js (v14 or higher)
 - MongoDB (local or cloud instance)
 
+### ENV file setup
+```.env
+PORT=your_port
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_jwt_secret
+```
+
 ### Installation
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/MKPTechnicals/Hospital-Management-System-MERN.git
+   git clone https://github.com/aishwary-dixit1/Medi-Track.git
    ```
 
 2. Navigate to the frontend directory and install dependencies:
