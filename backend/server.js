@@ -10,7 +10,6 @@ import loginRoutes from './routes/login.js';
 import adminRoutes from './routes/admin.js';
 import doctorRoutes from './routes/doctor.js';
 import patientRoutes from './routes/patient.js';
-import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
