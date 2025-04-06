@@ -54,38 +54,26 @@ const Home = () => {
       </header>
       
       <main className="flex-1">
-      <Section bg="bg-blue-600" height="min-h-[30rem]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center h-full">
-            {/* Text content */}
+        <Section bg="bg-blue-600" height="min-h-[30rem]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
             <div>
-              <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h1 className="text-5xl font-bold text-white mb-6 text-left">
                 Streamline Your Hospital Management
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8">
+              <p className="text-xl text-white mb-10 text-left">
                 Our comprehensive hospital management system helps you optimize patient care, streamline operations,
                 and improve overall efficiency.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button primary onClick={() => handleButtonClick('/login')}>
-                  Explore Features
-                </Button>
-                <Button variant="outline" onClick={() => handleButtonClick('/login')} className="border-white text-white hover:bg-white hover:text-blue-600">
-                  Appointments
-                </Button>
+              <div className="flex gap-4 justify-left">
+                <Button primary onClick={() => handleButtonClick('/login')}>Explore Features</Button>
+                <Button onClick={() => handleButtonClick('/login')}>Appointments</Button>
               </div>
             </div>
-
-            {/* Image side */}
-            <div className="w-full h-full min-h-[20rem] rounded-xl overflow-hidden shadow-lg">
-              <img
-                src="home-1.jpeg"
-                alt="Hospital illustration"
-                className="w-full h-full object-cover"
-              />
+            <div className="bg-gray-200 w-full h-full min-h-[20rem] rounded-lg overflow-hidden">
+              <img src="home-1.jpeg" alt="" />
             </div>
           </div>
         </Section>
-
 
         <Section>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
