@@ -83,10 +83,10 @@ JWT_SECRET=your_jwt_secret
 
     ```js
     const admin = new Admin({
-      firstName: "abc",
-      lastName: "xyz",
-      email: "abc@gmail.com",
-      password: "xyz123", 
+      firstName: "admin",
+      lastName: "Demo",
+      email: "admin@gmail.com",
+      password: "admin123", 
       role: "admin"
     });
     ```
