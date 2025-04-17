@@ -32,7 +32,7 @@ const Login = () => {
     }, 2000);
 
     return () => clearInterval(interval); // Cleanup
-  }, []);
+  }, [images.length]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,12 +49,16 @@ const Login = () => {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userRole', data.role);
         localStorage.setItem('userEmail', email);
+
         // Redirect based on role
         if (data.role === 'admin') {
+          toast.success("Welcome back, Admin! Access granted.");
           navigate('/admin');
         } else if (data.role === 'doctor') {
+          toast.success("Welcome, Doctor! Login successful.");
           navigate('/doctor');
         } else {
+          toast.success("Welcome back! Patient login successful.");
           navigate('/patient');
         }
       } else {

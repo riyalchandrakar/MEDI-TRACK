@@ -54,6 +54,8 @@ const SignUp = () => {
           }),
         });
         if (response.ok) {
+          toast.success("Patient signed up successfully!");
+
           navigate('/login');
         } else {
           const errorData = await response.json();
@@ -82,7 +84,7 @@ const SignUp = () => {
       }, 2000);
   
       return () => clearInterval(interval); // Cleanup
-    }, []);
+    }, [images.length]);
 
   return (
     <div className='min-h-screen flex flex-row'>

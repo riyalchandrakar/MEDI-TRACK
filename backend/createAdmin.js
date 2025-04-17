@@ -16,7 +16,7 @@ async function createAdmin() {
     firstName: "Admin",
     lastName: "Test",
     email: "admin@gmail.com",
-    password: "admin123", 
+    password: "123qwa", 
     role: "admin"
   });
 
